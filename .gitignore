@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build output
+dist/
+build/
+coverage/
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Databases and runtime data
+*.sqlite
+*.sqlite3
+storage/
+tmp/
+
+# Logs
+*.log
+
+# IDE and operating system
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
