@@ -1,0 +1,50 @@
+name: Relatar um problema
+description: Informe um comportamento incorreto ou inesperado.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Obrigado por ajudar a melhorar o Proviziona. Não inclua dados financeiros reais, segredos ou informações pessoais.
+  - type: checkboxes
+    attributes:
+      label: Verificações
+      options:
+        - label: Procurei por issues existentes sobre o mesmo problema.
+          required: true
+        - label: Removi dados pessoais e segredos do relato.
+          required: true
+  - type: input
+    attributes:
+      label: Versão
+      description: Informe a versão, tag ou commit.
+      placeholder: "Ex.: 0.1.0 ou abc1234"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Ambiente
+      description: Sistema operacional, navegador/dispositivo e tipo de instalação.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Passos para reproduzir
+      description: Liste os menores passos que reproduzem o problema.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Resultado observado
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Contexto adicional
+      description: Logs sanitizados, capturas ou outras informações úteis.
