@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Relatar uma vulnerabilidade
+    url: https://github.com/Proviziona/proviziona/security/advisories/new
+    about: Envie vulnerabilidades de segurança de forma privada. Não abra uma issue pública.
