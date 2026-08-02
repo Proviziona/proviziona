@@ -1,0 +1,52 @@
+name: Tarefa técnica
+description: Registre uma atividade técnica com escopo e validação claros.
+title: "[Tarefa]: "
+body:
+  - type: textarea
+    attributes:
+      label: Contexto
+      description: Explique a necessidade, o problema atual e as decisões relevantes.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Objetivo
+      description: Descreva o resultado esperado desta tarefa.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Escopo
+      description: Liste o que deve ser implementado ou alterado.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Fora do escopo
+      description: Liste explicitamente o que não faz parte desta tarefa.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Critérios de aceite
+      description: Liste condições objetivas que devem ser atendidas para concluir a tarefa.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Validação
+      description: Informe testes, comandos ou evidências necessários para validar a implementação.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Dependências e bloqueios
+      description: Relacione issues, decisões, serviços ou outras dependências. Informe "Nenhum" quando não houver.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Impacto offline e local-first
+      description: Explique se a tarefa afeta o funcionamento sem internet, os dados locais ou introduz dependência de servidor. Informe "Nenhum" quando não houver.
+    validations:
+      required: true
