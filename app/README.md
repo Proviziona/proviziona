@@ -1,15 +1,36 @@
 # Aplicativo
 
-Esta pasta receberá o aplicativo local-first do Proviziona.
+Aplicativo web local e offline do Proviziona. O cadastro e a consulta de
+provisionamentos usam apenas o armazenamento do próprio dispositivo; nenhuma
+conexão com o servidor é necessária.
 
-## Base planejada
+## Modelo de acesso
 
-- HTML e CSS;
-- TypeScript;
-- Vite;
-- Capacitor;
-- SQLite local.
+O aplicativo local é gratuito e completo. Conta, sincronização e uso em
+múltiplos dispositivos dependem de um plano pago e são opcionais. Os níveis e
+limites dos planos ainda serão definidos.
 
-O aplicativo deverá executar suas funções principais sem internet. Sincronização, backup e múltiplos dispositivos serão recursos adicionais, não requisitos para acessar os próprios dados.
+Ao cancelar o plano, o usuário perde somente os serviços de nuvem. Seus dados
+locais e todas as funções locais permanecem disponíveis integralmente.
 
-O scaffold será criado em uma mudança própria para que dependências, scripts e decisões de integração com SQLite possam ser revisados juntos.
+## Desenvolvimento
+
+Todos os comandos devem ser executados em container:
+
+```sh
+docker run --rm -v "${PWD}/app:/app" -w /app node:22-alpine npm ci
+docker run --rm -v "${PWD}/app:/app" -w /app node:22-alpine npm run check
+```
+
+`npm run check` executa lint, verificação de tipos, testes e build.
+
+## Persistência
+
+No navegador, os dados ficam no IndexedDB, no banco `proviziona-local`. A
+interface de repositório fica separada do domínio para permitir substituir a
+implementação sem alterar as regras da aplicação.
+
+Para a futura distribuição nativa com Capacitor, deve ser criado um adaptador
+da mesma interface `ProvisionamentoRepository` usando SQLite. Essa integração
+ainda não existe: não há fallback silencioso, sincronização ou simulação de
+SQLite nesta versão.
