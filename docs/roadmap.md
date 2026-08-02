@@ -11,6 +11,8 @@ O roteiro descreve ordem, não datas.
 
 ## 2. MVP local
 
+- manter o aplicativo local gratuito e completo;
+- garantir que todas as funções do MVP operem sem conta e sem conexão com servidor;
 - cadastrar e editar provisionamentos;
 - criar ciclos recorrentes;
 - registrar aportes e retiradas;
@@ -20,6 +22,9 @@ O roteiro descreve ordem, não datas.
 
 ## 3. Sincronização
 
+- disponibilizar conta, sincronização e múltiplos dispositivos somente mediante plano pago e opt-in;
+- preservar o funcionamento local quando a sincronização estiver desativada ou indisponível;
+- garantir que o cancelamento preserve integralmente os dados e o uso locais;
 - definir e versionar o protocolo;
 - autenticar contas e dispositivos;
 - implementar operações idempotentes;
@@ -36,7 +41,8 @@ O roteiro descreve ordem, não datas.
 
 - operar o mesmo servidor do self-host;
 - automatizar infraestrutura, backups e atualizações;
-- definir cobrança pela comodidade e pelos custos recorrentes;
-- manter as funções principais disponíveis sem assinatura.
+- definir níveis e limites dos planos pagos;
+- manter o aplicativo local completo e gratuito;
+- remover apenas os serviços de nuvem após o cancelamento, preservando dados e uso locais.
 
 Itens podem mudar conforme o uso real mostrar prioridades melhores.

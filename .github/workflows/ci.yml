@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  app:
+    name: Verificar app
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Executar verificações no Docker
+        run: |
+          docker run --rm \
+            --volume "${{ github.workspace }}/app:/app" \
+            --workdir /app \
+            node:22-bookworm-slim \
+            sh -euc '
+              npm ci
+              npm run check
+            '
